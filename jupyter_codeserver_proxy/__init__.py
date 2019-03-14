@@ -13,15 +13,17 @@ def setup_codeserver():
         full_path = shutil.which('code-server')
         if not full_path:
             raise FileNotFoundError('Can not find code-server in $PATH')
-        return [full_path, '--host=127.0.0.1', '--port=' + str(port), "--allow-http", "--no-auth" ]
+        working_dir = os.getenv("CODE_WORKINGDIR", None)
+        if working_dir is None:
+            working_dir = os.getenv("JUPYTER_SERVER_ROOT", ".")
+
+        return [full_path, '--port=' + str(port), "--allow-http", "--no-auth", working_dir ]
 
     return {
         'command': _codeserver_command,
-        'environment': {
-            'USE_LOCAL_GIT': 'true'
-        },
+        'timeout': 20,
         'launcher_entry': {
-            'title': 'VSCode IDE',
+            'title': 'VS Code IDE',
             'icon_path': os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                       'icons', 'vscode.svg')
         }
