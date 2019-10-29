@@ -1,3 +1,0 @@
-[jupyter_serverproxy_servers]
-codeserver = jupyter_codeserver_proxy:setup_codeserver
-

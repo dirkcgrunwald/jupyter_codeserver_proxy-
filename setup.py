@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="jupyter-codeserver-proxy",
-    version='1.0b2',
+    version='1.0b3',
     url="https://github.com/dirkcgrunwald/jupyter-codeserver-proxy.git",
     author="Dirk Grunwald based on Project Jupyter Contributors",
     description="grunwald@colorado.edu",
