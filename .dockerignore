@@ -1,0 +1,10 @@
+# Documentation
+README.rst
+README.md
+*.png
+
+# Python
+setup.*
+*.egg-info/
+build/
+jupyter_codeserver_proxy*/
